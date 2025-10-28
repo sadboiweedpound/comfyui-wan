@@ -180,6 +180,7 @@ CLIP_VISION_DIR="$NETWORK_VOLUME/ComfyUI/models/clip_vision"
 VAE_DIR="$NETWORK_VOLUME/ComfyUI/models/vae"
 LORAS_DIR="$NETWORK_VOLUME/ComfyUI/models/loras"
 DETECTION_DIR="$NETWORK_VOLUME/ComfyUI/models/detection"
+UPSCALE_MODELS_DIR="$NETWORK_VOLUME/ComfyUI/models/upscale_models"
 
 # Download 480p native models
 if [ "$download_480p_native_models" == "true" ]; then
@@ -199,6 +200,10 @@ download_model "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/reso
 # Download VAE
 echo "Downloading VAE..."
 download_model "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors" "$VAE_DIR/wan_2.1_vae.safetensors"
+
+# Download upscale models
+echo "Downloading upscale models..."
+download_model "https://huggingface.co/dtarnow/UPscaler/resolve/main/RealESRGAN_x2plus.pth" "$UPSCALE_MODELS_DIR/RealESRGAN_x2plus.pth"
 
 # Keep checking until no aria2c processes are running
 while pgrep -x "aria2c" > /dev/null; do
