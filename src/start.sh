@@ -200,6 +200,17 @@ download_model "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/reso
 echo "Downloading VAE..."
 download_model "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors" "$VAE_DIR/wan_2.1_vae.safetensors"
 
+# Download Loras
+echo "Downloading loras..."
+
+download_model "https://civitai.com/api/download/models/1791128?type=Model&format=SafeTensor" "$LORAS_DIR/furry_nsfw_1.1_e22.safetensors"
+
+download_model "https://civitai.com/api/download/models/1772841?type=Model&format=SafeTensor" "$LORAS_DIR/Wan-Hip_Slammin_Assertive_Cowgirl.safetensors"
+
+download_model "https://civitai.com/api/download/models/1693883?type=Model&format=SafeTensor" "$LORAS_DIR/jfj-deepthroat-v1.safetensors"
+
+download_model "https://civitai.com/api/download/models/2014449?type=Model&format=SafeTensor" "$LORAS_DIR/Wan21_I2V_14B_lightx2v_cfg_step_distill_lora_rank64_fixed.safetensors"
+
 # Keep checking until no aria2c processes are running
 while pgrep -x "aria2c" > /dev/null; do
     echo "🔽 Model Downloads still in progress..."
