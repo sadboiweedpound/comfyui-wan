@@ -1,0 +1,1 @@
+This repo is not for general use! You won't get any support from me if you use this and run into issues. It's for my custom Runpod template to generate AI videos using ComfyUI with Wan Video. I had to make it public because, as far as I'm aware, Runpod can't pull private repos. Please look elsewhere for more general repos of a Docker image with ComfyUI.
